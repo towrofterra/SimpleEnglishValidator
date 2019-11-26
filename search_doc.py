@@ -1,4 +1,5 @@
-import re, sys
+import re
+import sys
 
 
 def search(word):
@@ -29,7 +30,13 @@ def search_doc(doc):
         search(word)
 
 
-print(search_doc(sys.argv[1]))
+# MAIN
+if len(sys.argv) > 1:
+    args = sys.argv[1:]
+    for arg in args:
+        search_doc(arg)
+else:
+    print("Please enter words to be checked after the script name")
 
 
-# Ogden's wordlist doesn't include "has", "it" or "is"?!?!
+# Ogden's wordlist doesn't include "has", "it" or "is" - ridiculous
